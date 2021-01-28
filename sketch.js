@@ -3,7 +3,7 @@ let nsize;
 let width = 1920;
 let half = width/2;
 function setup(){
-  createCanvas(width,1080);
+  createCanvas(width,980);
   myNub = new nubjuk(half, 100);
   nsize = new Nsize();
 }
