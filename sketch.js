@@ -1,11 +1,19 @@
 let myNub;
 let nsize;
 let width = 1920;
-let half = width/2;
+let half = window.outerWidth/2;
+
 function setup(){
-  createCanvas(width,980);
+  createCanvas(window.outerWidth,window.outerHeight);
   myNub = new nubjuk(half, 100);
   nsize = new Nsize();
+  print(half);
+}
+function mousePressed() {
+  if (mouseX > 0 && mouseX < 1920 && mouseY > 0 && mouseY < 1080) {
+    let fs = fullscreen();
+    fullscreen(!fs);
+  }
 }
 function draw(){
   background(0,0,0);
