@@ -79,7 +79,7 @@ class Nsize{
   let fl = this.getposWidth(700,false);
   line(sr.x,sr.y,fr.x,fr.y);
   line(sl.x,sl.y,fl.x,fl.y);
-  line(300,fl.y,1620,fl.y);
+  line(0.3*half,fl.y,1.7*half,fl.y);
 }
 }
 
