@@ -27,7 +27,7 @@ function mousePressed() {
   }
 }
 function draw() {
-  background(255 * light, 255 * light, 255 * light);
+  background(200 * light, 254 * light, 255 * light);
 
   //myNub.display();
   stroke(0, 0, 0);
@@ -75,8 +75,8 @@ class Nsize {
     return this.initwidth + this.ratio * path;
   }
   displayLine() {
-    fill(255 - 255 * light, 255 - 255 * light, 255 - 255 * light);
-    stroke(255 - 255 * light, 255 - 255 * light, 255 - 255 * light);
+    fill(255 - 105 * light, 255 - 180 * light, 255 - 255 * light);
+    stroke(255 - 105 * light, 255 - 180 * light, 255 - 255 * light);
     let sr = this.getposWidth(0, true);
     let sl = this.getposWidth(0, false);
     let fr = this.getposWidth(700, true);
