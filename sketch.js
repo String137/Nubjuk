@@ -1,10 +1,10 @@
 let myNub;
 let nsize;
 let width = 1920;
-let half = window.outerWidth/2;
+let half = screen.width/2;
 
 function setup(){
-  createCanvas(window.outerWidth,window.outerHeight);
+  createCanvas(screen.width,screen.height);
   myNub = new nubjuk(half, 100);
   nsize = new Nsize();
   print(half);
