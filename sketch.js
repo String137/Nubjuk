@@ -9,7 +9,12 @@ function setup() {
   nsize = new Nsize();
   // print(half);
   // button = createButton();
-
+  let d = createDiv();
+  d.position(screen.width-200,300);
+  d.style('transform: rotate(' + 270 + 'deg);');
+  slider = createSlider(0,100,50);
+  // slider.position(screen.width)
+  d.child(slider);
   buttonm = createImg('/moon.png');
   buttons = createImg('/sun.png');
   buttonm.show();
@@ -21,7 +26,7 @@ function setup() {
 
 }
 function mousePressed() {
-  if (!(mouseX > screen.width - 200 && mouseX < screen.width - 50 && mouseY > 50 && mouseY < 200)) {
+  if (!(mouseX > screen.width - 200 && mouseX < screen.width - 50 && mouseY > 50 && mouseY < 400)) {
     let fs = fullscreen();
     fullscreen(!fs);
   }
@@ -35,6 +40,7 @@ function draw() {
   nsize.displayLine();
   myNub.velot = myNub.velot + random(-0.09, 0.1)
   myNub.velo = myNub.velot * myNub.velos;
+  myNub.blue = color(26+ slider.value(),161,254)
   // print(myNub.velot);
   myNub.update();
   if (myNub.pos.y >= 700 + 100) {
@@ -106,6 +112,7 @@ class nubjuk {
     this.velos = 2.5;
     this.velo = this.velot * this.velos;
     this.slip = 0.23;
+    this.blue = color(76,161,254);
   }
   setScore() {
     this.score = (max(0, this.path - 500)) / 2;
@@ -127,7 +134,7 @@ class nubjuk {
   }
   display(rad) {
     noStroke();
-    let blue = color(76, 161, 254);
+    // let blue = color(76, 161, 254);
     let white = color(255, 255, 255);
     let black = color(0, 0, 0);
     let pink;
@@ -148,10 +155,10 @@ class nubjuk {
     let blushpyratio = 0.12;
     let blushpxratio = 0.45;
     let swift = rad * this.sinratio * sin(rad * this.sinratio2);
-    fill(blue);
+    fill(this.blue);
     let pos = createVector(this.pos.x, this.pos.y);
     pos.x = this.pos.x + swift;
-    stroke(blue);
+    stroke(this.blue);
     strokeWeight(2);
     line(pos.x - rad * sin(PI * this.slip), pos.y, pos.x + rad * sin(PI * this.slip), pos.y);
     strokeWeight(1);
